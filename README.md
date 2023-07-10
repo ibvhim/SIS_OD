@@ -2,28 +2,23 @@
 
 ## __Aim__
 
-The goal of this project is to find a way to __synthesize new satellite images for Object Detection__. Additionally, I am trying to use image processing techniques to reduce dependency on libraries. 
+The goal of this project is to find a way to __synthesize new satellite images for Object Detection__. Additionally, I am trying to focus on mainly using image processing techniques to reduce dependency on any external libraries. 
 
 ---
 ## __Methodology__
 
-Before I tell you about the methodology there are a few things I want you to understand and that is that there are two parts to achieving the output -
+Before I tell you about the methodology there are a few things I want you to understand and that is that there are two parts to achieving the output - generate a base image and then add the objects on it.
 
-- The first part is generating an image that acts as a base for the objects 
-- The second part is extracting the objects and placing them on the new image
+So, naturally there are 2 scripts that is responsible for their corresponding parts :-
 
-Naturally there are 2 main scripts that are responsible for achieving the output:
-
-1. `stitch_images.py`: This script's main focus is to take the following inputs:
+1. `stitch_images.py`: This script's main focus is to randomly extract patches from the images present in the directiry and stitch together a new image. Which we refer to as the "base image". It takes the following inputs:
     - directory: The path to the folder containing the images from which the patches are to be extracted.
     - output_size: The desired size of the output image (e.g., (256, 256)).
     - num_outputs: The number of output images to be generated.
     - output_directory: The path to the folder where the output images should be saved.
     - grids: The number of grids in x-axis. (e.g., If you input 3 it will generate an output with a 3 x 3 grid)
 
-    The script then randomly extract patches from the images present in the directiry and stitch together a new image. Which we refer to as the "base image".
-
-2. `add_objects.py`: This script takes the following as inputs:
+2. `add_objects.py`: This script is responsible for eztracting the objects and adding them onto the stiched images. It takes the following as inputs:
     - image_dir:- Path to the images containing the objects
     - base_image_dir:- Path to the directory containing the base images
     - output_dir:- Path to the output folder 
