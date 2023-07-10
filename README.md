@@ -33,6 +33,28 @@ Naturally there are 2 main scripts that are responsible for achieving the output
 ![Process](misc/output.png)
 
 ---
+## __Usage__
+
+__Stitch Images__
+
+```
+python stitch_images.py --directory path/to/images \
+                        --output_size 512 \
+                        --num_outputs 10 \
+                        --output_dir path/to/output_folder \
+                        --grids 3
+```
+
+__Add Objects__
+
+```
+python add_objects.py --image_dir path/to/images \
+                      --base_image_dir path/to/base_images \
+                      --output_dir path/to/output_folder \
+                      --num_outputs 10
+```
+
+---
 ## __Limitations__
 
 - `No TIFF support`: The scripts only take PNG and JPG files as inputs. 
