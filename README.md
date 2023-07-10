@@ -15,8 +15,11 @@ Before I tell you about the methodology there are a few things I want you to und
 Naturally there are 2 main scripts that are responsible for achieving the output:
 
 1. `stitch_images.py`: This script's main focus is to take the following inputs:
-    - img_dir :- Path to negative images
-    - num_output: Number of outputs 
+    - directory: The path to the folder containing the images from which the patches are to be extracted.
+    - output_size: The desired size of the output image (e.g., (256, 256)).
+    - num_outputs: The number of output images to be generated.
+    - output_directory: The path to the folder where the output images should be saved.
+    - grids: The number of grids in x-axis. (e.g., If you input 3 it will generate an output with a 3 x 3 grid)
 
     The script then randomly extract patches from the images present in the directiry and stitch together a new image. Which we refer to as the "base image".
 
