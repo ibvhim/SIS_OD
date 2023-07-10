@@ -73,4 +73,9 @@ python add_objects.py --image_dir path/to/images \
     - The idea is to write a script that iterates through the images. The user will randomly have an image pop-up along with the annotations and the line the annotations are present (for example: line 5 or line 2 etc.) will be displayed as labels. The user will have the following choices after viewing the image:
         1. Delete the image and it's corresponding annotation file
         2. Delete a particular annotation or a list of annotations
+
 ---
+## __To-Do__
+
+- [ ] Add Segmentation Model (to seperate objects from background)
+- [ ] Script to remove FPs and Empty Annotations
